@@ -1,0 +1,38 @@
+<nav>
+    <div class="titleNav">
+        <a href="/"><p>Shop<span>JS</span></p></a>
+    </div>
+
+    <div class="searchNav">
+        <form action="/results" method="get">
+                <input type="text" name="search" id="search" autocomplete="off" onkeyup="sendData(this)">
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+        <section id="searchResults">
+        </section>
+    </div>
+
+    <div class="iconNav">
+        <div class="favorite"><a href="<% if (isAuth) { %>/favorites<% } else { %>/login<% } %>"><i class="fa-regular fa-heart"></i></a></div>
+        <div class="cart"><a href="<% if (isAuth) { %>/cart<% } else { %>/login<% } %>"><i id="cart" class="fa-solid fa-basket-shopping"></i></a></div>
+        <div class="chat"><a href="/info"><i class="fa-solid fa-circle-info"></i></a></div>
+       
+    </div>
+
+    <div class="accountNav">
+        <% if (!isAuth) { %>
+            <a href="/login"><p>Log in</p></a>
+            <a href="/signup"><p>Sign up</p></a>
+            <% } else { %>
+                <% if (isAdmin) { %>
+                    <a href="/admin" class="myShopLink adminLink">ADMIN</a>
+                
+                <% } else if (isAuth) { %>
+                    <a href="/my-shop" class="myShopLink"><%= userName %></a>
+                    <% } %>
+            <form action="/logout" method="post">
+                <button class="logout" type="submit">Log out</button>
+            </form>
+            <% } %>
+    </div>
+</nav>

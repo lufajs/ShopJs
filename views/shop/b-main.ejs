@@ -1,0 +1,25 @@
+<%- include('../includes/b-shop-head-p.ejs') %>
+<link rel="stylesheet" href="/css/b-main-page.css">
+  </head>
+  <body>
+    <%- include('../includes/b-shop-nav-p.ejs') %>
+    <main>
+      <section class="random ">
+        <% for (let product of prods) { %>
+        <div class="d1">
+          <div><a href="/product/<%= product._id %>"><img class="image" src="<%= product.image %>" alt="<%= product.title %>"></a></div>
+          <div><a href="/product/<%= product._id %>"><h1 class="title"><%= product.title %></h1></a></div>
+          <div><p class="price">$<%= product.price %></p></div>
+        </div>
+        <% } %>
+        </section>
+      <section class="category">
+      <div class="container">
+        <a href="/electronics"><p class="electronic">Electronics</p></a>
+        <a href="/automotive"><p class="automotive">Automotive</p></a>
+        <a href="/sport"><p class="sport">Sport</p></a>
+        <a href="/fashion"><p class="fashion">Fashion</p></a>
+      </div>
+      </section>
+    </main>
+  <%- include('../includes/b-shop-end-p.ejs') %>

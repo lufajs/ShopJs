@@ -1,0 +1,32 @@
+<%- include('../includes/b-shop-head-p.ejs') %>
+<link rel="stylesheet" href="/css/c-login-page.css">
+<link rel="stylesheet" href="/css/c-validation.css">
+  </head>
+  <body>
+    <%- include('../includes/b-shop-nav-p.ejs') %>
+    <main>
+      <section class="login">
+        <div class="loginForm">
+          <h1>Reset password</h1>
+      
+          <form action="/reset" method="POST" onsubmit="button.disabled = true">
+            <% if (errorMessage.length > 0) { %>
+            <div class="validation"><p><%= errorMessage %></p></div>
+            <% } %>
+            <div class="email">
+              <input 
+              type="text" 
+              name="email" 
+              id="email" 
+              placeholder="email" 
+              value="<%= oldInput.email %>">
+            </div>
+            <div class="controls">
+              <button name="button" type="submit">RESET</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

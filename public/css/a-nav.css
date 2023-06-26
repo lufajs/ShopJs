@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  background-color: #191a19;
+  justify-content: space-between;
+  height: 80px;
+  border-bottom: 3px solid #d8e9a81a;
+}
+
+nav div {
+  display: flex;
+  align-items: center;
+}
+
+nav div.titleNav {
+  margin: 0 40px 0 40px;
+}
+
+nav div.titleNav a {
+  all: unset;
+  cursor: pointer;
+  color: #4e9f3d;
+}
+
+nav div.titleNav p {
+  font-family: "Indie Flower", cursive;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+nav div.titleNav p:hover {
+  font-family: "Indie Flower", cursive;
+  color: #51cf38;
+}
+
+nav div.searchNav {
+  display: flex;
+  flex-direction: column;
+  margin: 23px 20px;
+}
+
+.searchNav section br {
+  display: none;
+}
+
+.searchNav section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #191a19;
+  z-index: 100;
+}
+
+.searchNav section a {
+  all: unset;
+  cursor: pointer;
+  color: #d8e9a8;
+  padding: 5px;
+}
+
+.searchNav section a:hover {
+  background-color: rgba(13, 14, 13, 0.412);
+}
+
+nav div.searchNav form {
+  font-size: 0;
+}
+
+nav div.searchNav form input {
+  all: unset;
+  width: 25vw;
+  padding: 5px;
+  color: #d8e9a8;
+  font-size: 20px;
+  border: 2px solid #d8e9a8;
+  border-radius: 2px 0 0 0px;
+  transition: border linear 0.1s;
+}
+
+nav div.searchNav form input:focus,
+nav div.searchNav form input:hover {
+  border-color: #d8e9a8a6;
+}
+
+nav div.searchNav form button {
+  all: unset;
+  cursor: pointer;
+  border: 2px solid #d8e9a8;
+  font-size: 20px;
+  padding: 5px;
+  background-color: #d8e9a8;
+  border-radius: 0 3px 0 0;
+}
+
+nav div.iconNav {
+  margin: 0 20px;
+}
+
+nav div.iconNav a {
+  all: unset;
+  cursor: pointer;
+}
+
+nav div.iconNav i {
+  color: #d8e9a8;
+}
+
+nav div.iconNav i:hover {
+  color: #c0cf94a2;
+}
+
+nav div.iconNav div {
+  margin: 0 30px;
+  font-size: 22px;
+}
+
+nav div.iconNav div.admin {
+  color: rgba(255, 0, 0, 0.479);
+}
+
+nav div.accountNav {
+  margin: 0 10px 0 20px;
+}
+
+nav div.accountNav a,
+nav div.accountNav button {
+  display: flex;
+  all: unset;
+  cursor: pointer;
+  color: #4e9f3d;
+  margin-right: 40px;
+}
+
+nav div.accountNav a.myShopLink {
+  font-size: 20px;
+  color: #d8e9a8;
+}
+
+nav div.accountNav a.myShopLink:hover {
+  color: #d8e9a8bb;
+}
+
+nav div.accountNav a.adminLink {
+  color: #ff0000;
+}
+
+nav div.accountNav a.adminLink:hover {
+  color: #ff0000bb;
+}
+
+nav div.accountNav p {
+  font-size: 20px;
+}
+
+nav div.accountNav p:hover {
+  color: #51cf38;
+}

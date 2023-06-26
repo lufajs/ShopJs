@@ -1,0 +1,38 @@
+<%- include('../includes/b-shop-head-p.ejs') %>
+<link rel="stylesheet" href="/css/b-product-view.css">
+  </head>
+  <body>
+    <%- include('../includes/b-shop-nav-p.ejs') %>
+    <main>
+        <section class="products">
+          <% if (prods.length > 0) { %>
+          <h1><%= ctg %></h1>
+            <div class="productList">
+              <% for (let product of prods) { 
+                 if (product.category === ctg.toLowerCase()) { 
+              %>
+                <div class="product">
+                    <div class="image"><img src="<%= product.image %>" alt="<%= product.title %>"></div>
+                    <div class="items">
+                      <p class="title"><a href="/product/<%= product._id %>"><%= product.title %></a></p>
+                      <p class="description"><%= product.description %></p>
+                      <p class="category"><a href="/<%= product.category %>"><%= product.category %></a></p>
+                      <p class="price">$<%= product.price %></p>
+                      <p class="isNew"><%= product.condition %></p>
+                    </div>
+                    <div class="controls">
+                      <%- include('../includes/fav-button-p.ejs', {product: product}) %>
+                      <%- include('../includes/cart-button-p.ejs', {product: product}) %>
+                    </div>
+                </div>
+                <% } } %>
+            </div>
+            <% } else { %>
+              <h1>No products found</h1>
+            <% } %>
+        </section>
+        <section class="filter">
+
+        </section>
+    </main>
+<%- include('../includes/b-shop-end-p.ejs') %>

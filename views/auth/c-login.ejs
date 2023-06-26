@@ -1,0 +1,47 @@
+<%- include('../includes/b-shop-head-p.ejs') %>
+<link rel="stylesheet" href="/css/c-login-page.css">
+<link rel="stylesheet" href="/css/c-validation.css">
+  </head>
+  <body>
+    <%- include('../includes/b-shop-nav-p.ejs') %>
+    <main>
+      <section class="login">
+        <div class="loginForm">
+          <h1>Log in</h1>
+      
+          <form action="/login" method="POST" onsubmit="button.disabled = true">
+            <% if (successMessage.length > 0) { %>
+              <div class="loginError loginMsg successMsg"><p><%= successMessage %></p></div>
+              <% } %>
+            <% if (errorMessage.length > 0) { %>
+            <div class="loginError loginMsg validation"><p><%= errorMessage %></p></div>
+            <% } %>
+            <div class="email">
+              <input 
+              type="text" 
+              name="email" 
+              id="email" 
+              placeholder="email" 
+              value="<%= oldInput.email %>">
+            </div>
+            <div class="password">
+              <input 
+              type="password" 
+              name="password" 
+              id="password" 
+              placeholder="password" 
+              value="<%= oldInput.password %>">
+            </div>
+            <div class="controls">
+              <button name="button">Log in</button>
+            </div>
+          </form>
+        </div>
+        <div class="other">
+            <a href="/signup">SIGN UP</a>
+            <a href="/reset">FORGOT PASSWORD</a>
+        </div> 
+      </section>
+    </main>
+  </body>
+</html>

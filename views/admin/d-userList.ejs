@@ -1,0 +1,36 @@
+<%- include('../includes/d-admin-head-p.ejs') %>
+<link rel="stylesheet" href="/css/d-productList.css">
+  </head>
+  <body>
+    <%- include('../includes/d-admin-nav-p.ejs') %>
+    <main>
+        <section class="products">
+        <div class="productList">
+            <div class="info">
+                <div class="items">
+                  <p class="title">USERNAME</p>
+                  <p class="category">EMAIL</p>
+                  <p class="price">ROLE</p>
+                  <p class="isNew">PRODUCTS</p>
+                </div>
+            </div>
+            <% for (let user of users) { %>
+            <div class="product">
+                  <div class="items">
+                    <p class="title"><%= user.username %></p>
+                    <p class="category"><%= user.email %></p>
+                    <p class="price"><%= user.role %></p>
+                    <p class="isNew"><%= user.products.items.length %></p>
+                    <div class="controls">
+                      <input type="hidden" value="<%= user.id %>" name="userId">
+                      <button type="button" onclick="deleteUser(this)">DELETE USER</button>
+                  </div>
+                  </div>
+            </div>
+            <% } %>
+        </div>
+        </section>
+    </main>
+  </body>
+</html>
+<script src="/js/actions.js"></script>

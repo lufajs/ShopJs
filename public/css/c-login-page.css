@@ -1,0 +1,93 @@
+section.login {
+  position: relative;
+  left: 50%;
+  top: 50px;
+  transform: translateX(-50%);
+  width: 30%;
+  height: 520px;
+}
+
+section.login {
+  display: flex;
+  flex-direction: column;
+}
+
+section.login div.loginForm {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+section.login div.loginForm h1 {
+  margin-left: 20px;
+  margin-top: 10px;
+  font-size: 30px;
+  color: #d8e9a8;
+}
+
+section.login div form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+section.login div form div {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  align-items: center;
+}
+
+section.login div form input {
+  all: unset;
+  box-sizing: border-box;
+  width: 90%;
+  padding: 5px;
+  color: #4e9f3d;
+  font-size: 20px;
+  border: 3px solid #4e9f3d;
+  border-radius: 5px;
+  transition: border linear 0.1s;
+}
+
+section.login div form input::placeholder {
+  color: #4d9f3d8f;
+}
+
+section.login div form .controls button {
+  all: unset;
+  box-sizing: border-box;
+  padding: 8px 0;
+  width: 90%;
+  text-align: center;
+  cursor: pointer;
+  font-size: 20px;
+  background-color: #4e9f3d;
+}
+
+section.login div form input:focus,
+section.login div form input:hover {
+  border-color: #4d9f3d7a;
+}
+
+section.login div form .controls button:hover {
+  background-color: #4d9f3dd3;
+}
+
+section.login div.other {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-top: 40px;
+}
+
+section.login div.other a {
+  margin-bottom: 15px;
+  text-decoration: none;
+  color: #d8e9a8;
+  font-size: 18px;
+}
+
+section.login div.other a:hover {
+  color: #d8e9a8d2;
+}

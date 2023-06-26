@@ -1,0 +1,35 @@
+div.validation {
+  position: relative;
+  border: 3px solid rgba(255, 0, 0, 0.89);
+  text-align: center;
+  width: 90%;
+  left: 50%;
+  border-radius: 7px;
+  transform: translateX(-50%);
+}
+
+div.validation p {
+  padding: 7px;
+  font-size: 20px;
+  color: rgba(255, 0, 0, 0.89);
+}
+
+body main section.login div.loginForm input.invalid {
+  border: 3px solid rgba(255, 0, 0, 0.486);
+}
+
+div.successMsg {
+  position: relative;
+  border: 3px solid rgba(30, 255, 0, 0.89);
+  text-align: center;
+  width: 90%;
+  left: 50%;
+  border-radius: 7px;
+  transform: translateX(-50%);
+}
+
+div.successMsg p {
+  padding: 7px;
+  font-size: 20px;
+  color: rgba(21, 255, 0, 0.89);
+}

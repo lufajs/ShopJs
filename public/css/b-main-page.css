@@ -1,0 +1,89 @@
+section.random {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 60px;
+  width: 100%;
+  height: 300px;
+  /* background-color: #1e5128; */
+  background: linear-gradient(135deg, #4e9f3d, #191a19, #d8e9a8);
+}
+
+section.random div.d1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  background-color: rgba(0, 0, 0, 0.123);
+  margin-top: 20px;
+  transition: 0.4s;
+}
+
+section.random div.d1:hover {
+  background-color: #191a19;
+}
+
+section.random div div {
+  margin-top: 2px;
+}
+
+section.random div div a {
+  all: unset;
+  color: #d8e9a8;
+  cursor: pointer;
+}
+
+div.d1 p {
+  color: #d8e9a8;
+}
+
+section.random div div h1:hover {
+  color: #d8e9a88c;
+}
+
+section.random div div img {
+  object-fit: cover;
+  object-position: center;
+  height: 200px;
+  width: 200px;
+  cursor: pointer;
+}
+
+section.category {
+  position: relative;
+  transform: translateX(-50%);
+  left: 50%;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  width: 75%;
+}
+
+section.category div.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+section.category a {
+  all: unset;
+  cursor: pointer;
+  background-color: #d8e9a8;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 23%;
+  height: 90px;
+  border-radius: 3px;
+}
+
+section.category a:hover {
+  background-color: #d8e9a879;
+}
+
+section.category a p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  height: 100%;
+  font-size: 30px;
+}

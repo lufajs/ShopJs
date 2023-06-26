@@ -1,0 +1,42 @@
+<%- include('../includes/b-shop-head-p.ejs') %>
+<link rel="stylesheet" href="/css/b-cart-page.css">
+  </head>
+  <body>
+    <%- include('../includes/b-shop-nav-p.ejs') %>
+<div class="container1">
+    <main>
+        <section class="products">
+          <h1>Cart</h1>
+        <div class="productList">
+            <% for (let product of prods) { %>
+            <div class="product">
+                  <div class="items">
+    
+                    <p class="title"><%= product.productId.title %></p>
+                    <p class="qty">( <%= product.quantity %> )</p>
+                    <p class="price">$<%= product.productId.price*product.quantity %></p>   
+                    <div class="controls">
+                    </div>
+                  </div>
+            </div>
+            <% } %>
+        </div>
+        <h2>TOTAL $<%= totalPrice %></h2>
+        <div class="order">
+              <button id="order-btn" class="btn">ORDER</button>
+              <script src="https://js.stripe.com/v3/"></script>
+              <script>
+                var stripe = Stripe(
+                  "pk_test_51MnWp9FFNfriRI59TlxpONZRYykRmR8zMIDUW3sLYOj5ibRWDvE2rvrQpKJGY8PtRKAL6jqVgpEuTHLsKuKvjixo00SoOu2tjl"
+                );
+                var orderBtn = document.getElementById("order-btn");
+                orderBtn.addEventListener("click", function () {
+                  stripe.redirectToCheckout({
+                    sessionId: "<%= sessionId %>",
+                  });
+                });
+              </script>
+        </div>
+        </section>
+    </main>
+<%- include('../includes/b-shop-end-p.ejs') %>

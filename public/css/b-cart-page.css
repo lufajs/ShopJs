@@ -1,0 +1,97 @@
+a.btn,
+button.btn {
+  all: unset;
+  margin-top: 20px;
+  padding: 4px 21px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 25px;
+  background-color: #4e9f3d;
+  margin-bottom: 20px;
+  transition: 0.1s;
+}
+
+a.btn:hover,
+button.btn:hover {
+  background-color: #4d9f3d98;
+}
+
+section.products {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section.products h1 {
+  color: #d8e9a8;
+  margin: 30px 0;
+  font-size: 30px;
+}
+
+section.products h2 {
+  color: #d8e9a8;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+div.productList {
+  display: flex;
+  width: 65%;
+  height: 100%;
+  flex-direction: column;
+  border-top: 3px solid #4e9f3d;
+}
+
+div.product {
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+}
+
+div.product div.items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  user-select: none;
+  border: 3px solid #4e9f3d;
+  border-top: none;
+}
+
+div.product div.items p {
+  width: 10%;
+  color: #4e9f3d;
+  font-size: 25px;
+}
+
+div.product div.items p.title {
+  font-size: 30px;
+}
+
+div.product div.items p.qty {
+  color: #d8e9a8;
+}
+
+div.product div.items img {
+  object-fit: cover;
+  object-position: center;
+  height: 80px;
+  width: 80px;
+  margin: 3px;
+}
+
+div.controls button {
+  all: unset;
+  margin-right: 25px;
+  font-size: 20px;
+  background-color: #d8e9a8;
+  padding: 2px 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+div.controls button:hover {
+  background-color: #d8e9a8a1;
+}

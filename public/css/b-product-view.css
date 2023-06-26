@@ -1,0 +1,93 @@
+section.products {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 35px;
+}
+
+section.products h1 {
+  color: #d8e9a8c4;
+  font-size: 35px;
+}
+
+div.productList {
+  display: flex;
+  width: 65%;
+  margin-top: 25px;
+  align-items: center;
+  flex-direction: column;
+  border-left: 2px solid #d8e9a810;
+  border-right: 2px solid #d8e9a80e;
+}
+
+div.product {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: 90%;
+  height: 250px;
+  border-bottom: 2px solid #d8e9a8b9;
+}
+
+div.product div.image img {
+  object-fit: cover;
+  object-position: center;
+  height: 200px;
+  width: 200px;
+  cursor: pointer;
+}
+
+div.product div.items {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #d8e9a8;
+  height: 190px;
+  width: 100%;
+  margin-left: 20px;
+  margin-bottom: 5px;
+  user-select: none;
+}
+
+div.product div.items p.title a {
+  all: unset;
+  cursor: pointer;
+  font-size: 35px;
+  color: #4e9f3d;
+  transition: 0.1s;
+}
+
+div.product div.items p.category a {
+  all: unset;
+  color: #d8e9a859;
+  cursor: pointer;
+}
+
+div.product div.items p.price {
+  font-size: 35px;
+  color: #4e9f3d;
+}
+
+div.product div.items p.title a:hover {
+  color: #d8e9a8;
+}
+
+div.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 10%;
+  height: 100px;
+}
+
+div.controls button {
+  all: unset;
+  cursor: pointer;
+}
+
+div.controls i {
+  font-size: 30px;
+  color: #d8e9a8;
+}

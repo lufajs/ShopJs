@@ -1,0 +1,46 @@
+<%- include('../includes/b-shop-head-p.ejs') %>
+<link rel="stylesheet" href="/css/b-singleProduct-view.css">
+  </head>
+  <body>
+    <%- include('../includes/b-shop-nav-p.ejs') %>
+    <main>
+        <section class="image">
+            <div class="title">
+                <h1><%= prod.title %></h1>
+                <div class="description">
+                    <p><%= prod.description %></p>
+                </div>
+            </div>    
+            <div class="image">
+                <img src="/<%= prod.image %>" alt="<%= prod.title %>">
+            </div>
+        </section>
+        <section class="info">
+            <div class="divInfo">
+                <div class="description">
+                    <p><%= prod.title %></p>
+                    <p style="font-size: 17px;"><%= prod.condition %></p>
+                    <h1>$<%= prod.price %></h1>
+                </div>
+                <div class="controls">
+                    <form action="/cart" method="POST">
+                        <div>
+                        <% if (isAuth) { %>
+                            <button class="btn" type="button" onclick="addToCart(this)">ADD TO CART</button>
+                            <%- include('../includes/fav-button-p.ejs', {product: prod}) %>
+                        <% } else { %>
+                            <button class="btn" type="button"><a class="btn" href="/login">ADD TO CART</a></button>
+                            <a href="/login"><i id="addFav"  class="noAuth fa-regular fa-heart favHeart"></i></a>
+                        <% } %>
+                        </div>
+                        <input type="hidden">
+                        <div class="other">
+                         
+                            <a href="/seller/<%= username %>">All <%= username %>'s products</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <%- include('../includes/b-shop-end-p.ejs') %>

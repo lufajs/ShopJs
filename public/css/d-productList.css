@@ -1,0 +1,71 @@
+section.products {
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-evenly;
+}
+
+section.products div.filters {
+  width: 200px;
+  height: 500px;
+  border: 2px solid red;
+}
+
+div.productList {
+  display: flex;
+  width: 85%;
+  height: 100%;
+  flex-direction: column;
+  border-top: 3px solid red;
+}
+
+div.product,
+div.info {
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+}
+
+div.product div.items,
+div.info div.items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  user-select: none;
+  border: 3px solid red;
+  border-top: none;
+  padding-right: 100px;
+}
+
+div.info div.items p {
+  width: 20%;
+  color: #d8e9a8;
+  font-size: 20px;
+  padding: 5px;
+}
+
+div.product div.items p {
+  width: 20%;
+  color: red;
+  font-size: 15px;
+  padding: 5px;
+}
+
+div.controls {
+  position: absolute;
+  right: 10%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+div.controls button {
+  all: unset;
+  background-color: red;
+  padding: 2px 7px;
+  text-align: center;
+  cursor: pointer;
+}
+
+div.controls button:hover {
+  background-color: rgb(156, 0, 0);
+}

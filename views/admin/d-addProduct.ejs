@@ -1,0 +1,84 @@
+<%- include('../includes/d-admin-head-p.ejs') %>
+<link rel="stylesheet" href="/css/c-login-page.css">
+<link rel="stylesheet" href="/css/d-admin-addProduct.css">
+<link rel="stylesheet" href="/css/c-validation.css">
+  </head>
+  <body>
+    <%- include('../includes/d-admin-nav-p.ejs') %>
+    <main>
+        <section class="login">
+          <div class="loginForm">
+            <h1>Add product</h1>
+            <form action="/admin/add-product" method="POST" enctype="multipart/form-data" onsubmit="button.disabled = true">
+              <% if (errorMessage.length > 0) { %>
+                <div class="validation"><p><%= errorMessage %></p></div>
+            <% } %>
+              <div class="image">
+                  <input type="file" name="image" id="image">
+                </div>
+              <div class="title">
+                <input type="text" name="title" id="title" placeholder="title" value="<%= oldInput.title %>">
+              </div>
+
+            <div class="category">
+              <label class="container" for="electronics">Electronics
+                <input type="checkbox" class="radio1" name="category" id="electronics" value="electronics">
+                <span class="checkmark"></span>
+              </label>
+
+              <label class="container" for="sport">Sport
+                <input type="checkbox" class="radio1" name="category" id="sport" value="sport">
+                <span class="checkmark"></span>
+              </label>
+
+              <label class="container" for="automotive">Automotive
+                <input type="checkbox" class="radio1" name="category" id="automotive" value="automotive">
+                <span class="checkmark"></span>
+              </label>
+
+              <label class="container" for="fashion">Fashion
+                  <input type="checkbox" class="radio1" name="category" id="fashion" value="fashion">
+                  <span class="checkmark"></span>
+              </label>
+            </div>
+
+            <div class="description">
+              <input type="text" name="description" id="description" placeholder="description" value="<%= oldInput.description %>">
+            </div>
+
+                <div class="isNew">
+                  <label class="container" for="new">New
+                    <input type="checkbox" class="radio" name="condition" id="new" value="new">
+                    <span class="checkmark"></span>
+                  </label>
+    
+                  <label class="container" for="used">Used
+                    <input type="checkbox" class="radio" name="condition" id="used" value="used">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+                <div class="price">
+                  <input type="number" name="price" id="price" placeholder="price" value="<%= oldInput.price %>">
+                </div>
+              <div class="controls">
+                <button name="button" type="submit">ADD</button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </main>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script type="text/javascript">
+      $(document).ready(function(){   
+         $('.radio').click(function() {
+            $('.radio').not(this).prop('checked', false);
+         });
+      });
+      $(document).ready(function(){
+   $('.radio1').click(function() {
+      $('.radio1').not(this).prop('checked', false);
+   });
+   });
+      </script>
+  </body>
+</html>

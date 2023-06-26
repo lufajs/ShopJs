@@ -1,0 +1,25 @@
+nav {
+  border-bottom: 3px solid #ff00001a;
+}
+
+nav div.titleNav a {
+  color: red;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+div.iconNav div a {
+  color: rgba(156, 0, 0, 0.842);
+}
+
+div.iconNav div a:hover {
+  color: rgb(255, 0, 0);
+}
+
+h1.emptyProds {
+  position: absolute;
+  top: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: red;
+}

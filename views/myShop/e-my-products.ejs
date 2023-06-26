@@ -1,0 +1,71 @@
+<%- include('../includes/b-shop-head-p.ejs') %>
+<link rel="stylesheet" href="/css/b-product-view.css">
+<link rel="stylesheet" href="/css/e-main.css">
+<link rel="stylesheet" href="/css/c-validation.css">
+<style>
+  div.container {
+    display: flex;
+    justify-content: center;
+  }
+
+  div.productList {
+    border: none;
+  }
+
+  div.controls button {
+  all: unset;
+  box-sizing: border-box;
+  padding: 8px 16px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 20px;
+  background-color: #9f3d3d;
+  margin-bottom: 20px;
+}
+
+div.controls button:hover {
+  background-color: #9f3d3dc0;
+}
+
+div.controls button.confirm {
+  background-color: #4e9f3d;
+}
+
+div.controls button.confirm:hover {
+  background-color: #4d9f3dc9;
+}
+</style>
+  </head>
+  <body>
+    <%- include('../includes/b-shop-nav-p.ejs') %>
+    <main>
+      <section class="user">
+        <div class="hello">
+          <h1>Hi <%= userName %>!</h1>
+          <a href="/my-shop/add-product">Add Product</a>
+          <a href="/my-shop/my-products">My Products</a>
+        </div>
+        <div class="container">
+          <div class="productList">
+            <% for (let product of prods) { %>
+              <div class="product">
+                  <div class="image"><img src="/<%= product.image %>" alt="<%= product.title %>"></div>
+                  <div class="items">
+                    <p class="title"><a href="/product/<%= product._id %>"><%= product.title %></a></p>
+                    <p class="description"><%= product.description %></p>
+                    <p class="category"><a href="/<%= product.category %>"><%= product.category %></a></p>
+                    <p class="price">$<%= product.price %></p>
+                    <p class="isNew"><%= product.condition %></p>
+                  </div>
+                  <div class="controls">
+                    <input type="hidden" name="productId" id="productId" value="<%= product._id %>">
+                    <button class="confirm" onclick="editProduct(this)" type="button">Edit</button>
+                    <button class="deny" onclick="deleteUserProduct(this)" type="button">Delete</button>
+                  </div>
+              </div>
+              <% } %>
+          </div>
+        </div>
+      </section>
+    </main>
+  <%- include('../includes/b-shop-end-p.ejs') %>

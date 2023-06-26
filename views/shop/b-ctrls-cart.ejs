@@ -1,0 +1,33 @@
+<%- include('../includes/b-shop-head-p.ejs') %>
+<link rel="stylesheet" href="/css/b-cart-page.css">
+  </head>
+  <body>
+    <%- include('../includes/b-shop-nav-p.ejs') %>
+    <main>
+      <section class="products">
+        <h1>Cart</h1>
+      <div class="productList">
+          <% for (let product of prods) { %>
+          <div class="product">
+                <div class="items">
+                  <img src="<%= product.productId.image %>" alt="<%= product.productId.title %>">
+                  <p class="title"><%= product.productId.title %></p>
+                  <p class="qty">( <%= product.quantity %> )</p>
+                  <p class="price">$<%= product.productId.price*product.quantity %></p>   
+                  <div class="controls">
+                    <form action="/cart-delete" method="post">
+                    <input type="hidden" value="<%= product.productId.id %>" name="productId">
+                    <button type="submit">DELETE</button>
+                    </form>
+                  </div>
+                </div>
+          </div>
+          <% } %>
+      </div>
+      <h2>TOTAL $<%= totalPrice %></h2>
+      <div class="order">
+            <a href="/checkout" class="btn">ORDER</a>
+      </div>
+      </section>
+  </main>
+<%- include('../includes/b-shop-end-p.ejs') %>

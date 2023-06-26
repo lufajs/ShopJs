@@ -1,0 +1,33 @@
+<%- include('../includes/b-shop-head-p.ejs') %>
+<link rel="stylesheet" href="/css/b-product-view.css">
+  </head>
+  <body>
+    <%- include('../includes/b-shop-nav-p.ejs') %>
+    <main>
+        <section class="products">
+          <h1><%= username %>'s Products</h1>
+            <div class="productList">
+              <% for (let product of prods) { %>
+                <div class="product">
+                    <div class="image"><img src="/<%= product.productId.image %>" alt="<%= product.productId.title %>"></div>
+                    <div class="items">
+                      <p class="title"><a href="/product/<%= product.productId._id %>"><%= product.productId.title %></a></p>
+                      <p class="description"><%= product.productId.description %></p>
+                      <p class="category"><a href="/<%= product.productId.category %>"><%= product.productId.category %></a></p>
+                      <p class="price">$<%= product.productId.price %></p>
+                      <p class="isNew"><%= product.productId.condition %></p>
+                    </div>
+                    <div class="controls">
+                      <%- include('../includes/fav-button-p.ejs', {product: product}) %>
+                      <%- include('../includes/cart-button-p.ejs', {product: product}) %>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+
+        </section>
+        <section class="filter">
+
+        </section>
+    </main>
+<%- include('../includes/b-shop-end-p.ejs') %>

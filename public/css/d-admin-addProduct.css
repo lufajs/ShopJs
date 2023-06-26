@@ -1,0 +1,112 @@
+section.login div.loginForm {
+  margin-top: -30px;
+}
+
+body main section.login div.loginForm form div input {
+  color: red;
+  border: 3px solid red;
+}
+
+body main section.login div.loginForm form div input::placeholder {
+  color: rgba(255, 0, 0, 0.479);
+}
+
+section.login div form .controls button {
+  background-color: #d8e9a8;
+  margin-top: 15px;
+}
+
+body main section.login div.loginForm form div input:focus,
+body main section.login div.loginForm form div input:hover {
+  border-color: rgba(255, 0, 0, 0.425);
+}
+
+section.login div form .controls button:hover {
+  background-color: #d8e9a886;
+}
+.container {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 21px;
+  width: 21px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #d8e9a8;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 2px;
+  width: 2px;
+  height: 10px;
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+section.login div form div.category label input,
+body main section.login div.loginForm form div.isNew label input {
+  display: none;
+}
+
+body main section.login div.loginForm form div.category,
+body main section.login div.loginForm form div.isNew {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+body main section.login div.loginForm form div.category label,
+body main section.login div.loginForm form div.isNew label {
+  color: red;
+  width: 25%;
+}

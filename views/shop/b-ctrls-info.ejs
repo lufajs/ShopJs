@@ -1,0 +1,72 @@
+<%- include('../includes/b-shop-head-p.ejs') %>
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: green;
+    font-size: 1.3em;
+    margin-top: 10px;
+  }
+
+  .container {
+    margin: 15px 0;
+    font-size: 20px;
+    width: 80%;
+    text-align: center;
+  }
+
+  footer {
+    display: flex;
+    color: #d8e9a8;
+  }
+
+  footer p, a {
+ margin: 0 20px;
+  }
+  footer p i {
+ margin: 0 5px;
+  }
+  footer a i {
+ margin: 0 5px;
+  }
+</style>
+  </head>
+  <body>
+    <%- include('../includes/b-shop-nav-p.ejs') %>
+    <main>
+      <header><h1>ShopJS</h1></header>
+      <header><h2>pseudo-shopping platform</h2></header>
+      <div class="container"><span style="color: red;">To make new admin account it is needed to change the user.role to admin in mongoDBCompass</span>
+       <br>
+        Already created accounts 
+        <br>
+        <span style="color: red;">
+        Email: admin@gmail.com
+        Password: admin
+        Role: admin
+      </span>
+        <br>
+        <span style="color: red;">
+        Email: guest@gmail.com
+        Password: guest
+        Role: client
+      </span>
+        <br>
+        <br>
+        Server as a view side was fully done by me. This is my biggest MVC project so far. I wanted to show my backend skills here so the frontend styling may not be perfect, especially the responsivity. It has almost every funcionalities as the real shopping platform.
+        <br>
+        <br>
+        Server side:
+        App database is running on mongodb. As i was working more on backend side, for sessions i used express-session dependency. Passwords are hashed by bcryptjs. To validate entered data i used express-validator and connect-flash for real-time message. I manage to find some good free SMTP provider so passwords can be restored by sending an activation link which is stored in protected crypto route. To store product's pictures i used multer, i know it is not the best idea to store big data on server but it will do for demonstrations. For views i choose ejs as i find it the best. It is possible here to make fake transactions by stripe, of course it's all test and wont charge anything. I even installed the pdfkit for invoices.
+        <br>
+        View side:
+        Navigation: usable searchbar, tabs(favorites, cart, info), User name which will redirect to user profile (IF IT IS ADMIN ACCOUNT IT WILL SHOW RED ADMIN INSTEAD WHICH LEADS TO ADMIN PANEL). Log in Sign up and Log out buttons. In user profile we can add or delete our products. Before the product can be published it requires to be submited in admin panel. In admin panel we can delete products and users, create products and accept other users products.</div>
+      <footer>
+        <p><i class="fa-solid fa-envelope"></i>faronludwik@gmail.com</p>
+        <p><i class="fa-solid fa-phone"></i>530 023 820</p>
+        <a href="https://github.com/lufajs?tab=repositories" style="color: #d8e9a8;"><i class="fa-brands fa-github"></i>lufajs</a>
+      </footer>
+    </main>
+<%- include('../includes/b-shop-end-p.ejs') %>

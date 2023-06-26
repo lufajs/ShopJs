@@ -1,0 +1,45 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="/js/actions.js"></script>
+<script>
+    function sendData(e){
+        const searchResults = document.getElementById('searchResults')
+        let match = e.value.match(/^[a-zA-Z ]*/);
+        let match2 = e.value.match(/\s*/);
+        if (match2[0] === e.value) {
+            searchResults.innerHTML = ''
+            return;
+        }
+        if (match[0] === e.value) {
+            fetch('search-products', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({payload: e.value})
+        }).then(res => res.json()).then(data => {
+            searchResults.style.display = 'flex';
+            let payload = data.payload;          
+            searchResults.innerHTML ='';
+            console.log(searchResults)
+            if(payload < 1){
+                return;
+            }
+            payload.forEach((item, index) => {
+                if(index >= 0)  {
+                searchResults.innerHTML += `<a href="/results?search=${item.title}">${item.title}</a>`;              
+                searchResults.style.borderBottom = "2px solid #d8e9a8a6"
+                searchResults.style.borderRight = '2px solid #d8e9a8a6'
+                searchResults.style.borderLeft = '2px solid #d8e9a8a6'
+                }
+            })      
+        })
+        return;
+        }
+        searchResults.innerHTML = '';
+    }
+
+    $(document).on("click", function(e) {
+        const searchResults = document.getElementById('searchResults');
+        searchResults.style.display = 'none';
+    });
+</script>
+ </body>
+</html>

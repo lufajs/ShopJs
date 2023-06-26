@@ -1,0 +1,22 @@
+<%- include('../includes/b-shop-head-p.ejs') %>
+<link rel="stylesheet" href="/css/b-cart-page.css">
+  </head>
+  <body>
+    <%- include('../includes/b-shop-nav-p.ejs') %>
+<div class="container1">
+    <main>
+        <section class="products">
+          <h1>Cart</h1>
+        <div class="productList">
+            <% orders.forEach(order => { %>
+            <div class="product">
+                  <div class="items">
+    
+                    <p class="title">Order: <%= order._id %></p><a href="/orders/<%= order.id %>">INVOICE</a>
+                  </div>
+            </div>
+            <% }) %>
+        </div>
+        </section>
+    </main>
+<%- include('../includes/b-shop-end-p.ejs') %>

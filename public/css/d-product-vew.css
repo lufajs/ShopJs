@@ -1,0 +1,48 @@
+body main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div.product {
+  border-bottom: 2px solid #ff5b5bb9;
+}
+
+div.product div.items {
+  color: #f38c8c;
+}
+
+div.product div.items p.title {
+  font-size: 35px;
+  color: #b43d3d;
+}
+
+div.product div.items p.category a {
+  color: #f38c8c;
+}
+
+div.product div.items p.price {
+  color: #9f3d3d;
+}
+
+div.controls button {
+  all: unset;
+  box-sizing: border-box;
+  padding: 8px 16px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 20px;
+  background-color: #9f3d3d;
+  margin-bottom: 20px;
+}
+
+div.controls button:hover {
+  background-color: #9f3d3dc0;
+}
+
+div.controls button.confirm {
+  background-color: #4e9f3d;
+}
+
+div.controls button.confirm:hover {
+  background-color: #4d9f3dc9;
+}
